@@ -1,0 +1,621 @@
+/* Esto se aplica a todo */
+*{
+    padding: 1px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif; /*Esto es el estilo de fuente*/
+}
+
+/*Le sacamos el subrayado a todos los links*/
+a{
+    text-decoration: none;
+}
+p{
+    color: white;
+    font-size: 11px;
+    /*text-transform: uppercase;*/
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+/* Aca le aplicamos flexbox para que no se vea todo encima de lo otro */
+.padre{
+    display: flex; /*Esto lo deja por defecto*/
+    flex-flow: column nowrap; /*Esto adapata automaticamente el tamaño, se ve igual que al principio*/
+
+}
+
+.margen-interno{
+    padding: 0 80px;
+}
+
+/* FONDO DE LA PESTAÑA DE INICIO - TIENDA Y CONTACTO*/
+.header{
+    background: url(../Imagenes/fondos/inicio.JPG);/*La ruta de la imagen. Los dos puntos y la barra diagonal sirven para retroceder de la carpeta css y luego entrar en la carpeta imágenes*/
+    background-position: center; /*Centrada en el cuadro*/
+    background-attachment: fixed;/*Adentro del cuadro*/
+    background-size: cover; /*No se, pero va*/
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* FONDO DE LA VENTANA NOSOTROS*/
+.nosotros{ 
+    background: url(../Imagenes/fondos/nosotros.JPG);/*La ruta de la imagen. Los dos puntos y la barra diagonal sirven para retroceder de la carpeta css y luego entrar en la carpeta imágenes*/
+    background-position: center; /*Centrada en el cuadro*/
+    background-attachment: fixed;/*Adentro del cuadro*/
+    background-size: cover; /*No se, pero va*/
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* FONDO DE LA VENTANA JARDINES*/
+.jardines{
+    background: url(../Imagenes/fondos/jardines.jpg);/*La ruta de la imagen. Los dos puntos y la barra diagonal sirven para retroceder de la carpeta css y luego entrar en la carpeta imágenes*/
+    background-position: center; /*Centrada en el cuadro*/
+    background-attachment: fixed;/*Adentro del cuadro*/
+    background-size: cover; /*No se, pero va*/
+    display: flex;
+    flex-flow: column nowrap;
+
+} 
+/* FONDO DE LA VENTANA CONTACTO*/
+.cont{
+    background: url(../Imagenes/fondos/contacto.jpg);/*La ruta de la imagen. Los dos puntos y la barra diagonal sirven para retroceder de la carpeta css y luego entrar en la carpeta imágenes*/
+    background-position: center; /*Centrada en el cuadro*/
+    background-attachment: fixed;/*Adentro del cuadro*/
+    background-size: cover; /*No se, pero va*/
+    display: flex;
+    flex-flow: column nowrap;
+
+} 
+
+    .menu{
+        background: rgba(0, 0, 0, .65); /*Un degrade*/
+        display: flex;
+        flex-flow: row nowrap; /*Los elementos ahora son filas*/
+        /*height: 100px;*/
+        min-height: 15vh;
+        align-items: center; /*Pone los items al medio del menu (a lo alto)*/
+        text-align: center; /*Pone los items al medio del menu (a lo largo)*/
+        border-bottom: 2px solid rgba(255, 255, 255, .5);
+    }
+        .logo{
+            flex: 1 1 auto;
+            
+        }
+            .logo a{
+                color: white;
+                font-size: 30%;
+            }
+            .logo img{
+                border-radius: 30px;
+            }
+
+        .nav{
+            flex: 5 1 auto;
+        }
+
+            .nav a{
+                color: white;
+                font-size: 15px;
+                text-transform: uppercase; /*Todo mayuscula*/
+                padding: 0 5px;
+                letter-spacing: 2px; /*Cada letra se separa 2 px*/
+            }
+
+            /* cuando se pasa el mouse cambia de color*/
+            .nav a:hover{ 
+                color: yellow;
+            }
+
+            /* Indica que pagina del menú esta actualmente en ejecución*/
+            .nav a.current{
+                color: yellow;
+            }
+
+        .social{
+            flex: 1 1 auto;
+            display: flex; /*Pone un ícono al lado del otro*/
+        }
+            .social a{
+                font-size: 25px;
+                color: white;
+                padding: 0 5px; /* Esto separa los iconos de las redes*/
+            }
+            .social a:hover{
+                color: yellow;
+            }
+            
+    .texto-principal{
+        min-height: 30vh;
+        min-width: 70vh;
+        display: flex;
+        align-items: center;
+    }
+
+        img{
+            display: block;
+            width: 100%;
+            align-self: center;
+        }
+
+        h2{
+            display: block;
+            background: rgba(0, 0, 0, .5);
+            border-radius: 5px;
+            /*font-family: 'Lora', serif;*/
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: white;
+            /*font-weight: 2px;*/
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        /*********************************************************************************/
+        /*************************** boton radio modal ***********************************/
+        /*********************************************************************************/
+
+        .modal{
+            position: fixed;
+            display: flex;
+            width: 85%;
+            height: auto;
+            top: -110vh;
+            z-index: 100;
+            transition: all .5s;
+        }
+
+            #abrir-modal +label{
+                /*display: none;*/
+                line-height: 4;
+                padding: 0 1em;
+                border-radius: 70px;
+                text-transform: uppercase;
+                font-size: 22px;
+                background: #0779e4;
+                margin: auto;
+                color: white;
+                cursor: pointer;
+            }
+
+                #abrir-modal +label:hover{
+                    background: steelblue;
+                }
+
+                :checked ~ .modal{
+                    top: 10vh;
+                }
+
+           #cerrar-modal +label{
+                position: fixed;
+                right: 10vh;
+                z-index: 150;
+                color: white;
+                font-size: 1.5em;
+                font-weight: bold;
+                background: red;
+                border-radius: 20%;
+                text-align: center;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+            }
+
+            #cerrar-modal +label:hover{
+                background: tomato;
+            }
+
+            
+
+
+    .texto-principal-us{
+        min-width: 90vh;
+        min-height: 90vh;
+        display: flex;
+        align-items: left  ;
+    }    
+
+        .parrafo{
+            display: block;
+            background: rgba(244, 238, 199, .5);
+            border-radius: 90px;
+            padding: 18px;
+            /*font-family: 'Indie Flower', cursive;*/
+            font-family: 'Montserrat', sans-serif;
+            font-size: 27px;
+           /* color: #004445;*/
+            color: black;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.5; /*interlineado*/
+        }
+
+        .contacto{
+            display: block;
+            /*min-width: 80vh;*/
+            background: rgba(0, 0, 0, .5); 
+            font-size: 30px; 
+            font-weight: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-align: left;
+            line-height: 1; /* la altura de la letra*/
+        }   
+    
+
+
+/**********************************************************************************/
+/*********************** Menu despleglable de articulos ***************************/
+/**********************************************************************************/
+
+.boton-menu{
+    display: none; /* desaparece cuando la pantalla es grande*/
+    width: 10%;
+    padding: 20px;
+    color: white;
+    background: black;
+    min-width: 300px;
+}
+
+.contenedor-menu{
+    display: block;
+    width: 18%;
+    min-width: 300px;
+    margin: 0px;
+    display: inline-block;
+    line-height: 18px;
+}
+
+    .contenedor-menu .menu-des{
+        width: 100%;
+    }
+
+    .contenedor-menu ul{ /*Le saca las viñetas*/
+        list-style: none;
+    }
+
+    /*El estilo de las categorías*/
+    .contenedor-menu .menu-des li a{
+        color: white; /* colo de la letra*/
+        display: block;
+        padding: 15px 20px;
+        background: black; /* color del boton*/
+    }
+
+    .contenedor-menu .menu-des .icon-der{
+        float: right;
+    }
+
+    /*Cuando se pasa el mouse sobre las categorías cambia el color de las letras*/
+    .contenedor-menu .menu-des li a:hover{
+        color: yellow;
+    }
+
+    /*Oculta las subcategorías*/
+    .contenedor-menu .menu-des .sub{
+        display: none;
+    }
+
+
+    .contenedor-menu .menu-des ul li a{
+        text-align: right;
+        background: grey;
+    }
+
+    /*Cuando se selecciona una categoría con subcategorías, esta se marca*/
+    .contenedor-menu .menu-des .activado > a{
+        background: #1a95d5;
+        color: white;
+    }
+
+/***************************************************************************************/        
+/******************* CATALOGO DE ARTICULOS ********************************************/
+/***************************************************************************************/
+
+.wrap{
+    max-width: 1100px;
+    width: 95%;
+    margin: auto;
+
+}
+
+    .store-wrap{
+        display: flex; /*Para poner los filtros al lado de los productos*/
+    }
+
+    .product-list{
+        width: 82%;
+        display: flex;
+        flex-wrap: wrap; /*se acomoda a la pantalla*/
+    }
+
+        .product-list .product-item img{
+            width: 100%;
+        }
+        
+        .product-list .product-item{
+            width: 30%; /*22px es el valor original*/
+            margin-left: 3%; 
+            margin-bottom: 3%; /*25 original*/
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: flex-start;
+
+            transition: all .4s;
+        }
+
+        .product-list .product-item a{
+            display: block;
+            width: 80%;
+            padding: 0px 0px;  
+            text-align: center;          
+        }
+
+        .product-list .product-item h3{
+            display: block;
+            height: 65px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+
+/***********************************************************************************/
+/***********************************  FOOTER ***************************************/
+/***********************************************************************************/
+
+.footer{
+    min-height: 40vh;
+    background: rgba(0, 0, 0, .8); /*Un degrade*/
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+}
+
+    .imagen{
+        display: block;
+        flex: 1 1 auto;
+    }
+
+        .imagen img{
+            display: block;
+            align-self: center;
+            width: 50%;
+        }
+
+    .menu-inferior{
+        display: block;
+        flex: 1 1 auto;
+    }
+        .footer ul li{
+            list-style: none;
+            text-align: right;
+        }
+
+        .footer ul li a{
+            color: white;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+        }
+
+        .footer ul li a:hover{
+            color: yellow;
+        }
+
+    .derechos{
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    
+
+
+/****************************************************************************************/
+/*  ****************************** SLIDER ****************************************** */
+/************************************************************************************/
+
+.contenedor-slider{
+    margin: auto;
+    width: 85% ;
+    max-width: 900px;
+    max-height: 400;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: o-flex;
+    display: flex;
+    width: 400%; /* (cantidad de avisos * 100)=width */
+}
+
+.servicios{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: o-flex;
+    display: flex;
+    width: 400%; /* (cantidad de avisos * 100)=width */
+}
+
+.slider section{
+    width: 100%;
+}
+
+.slider img{
+    display: block;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.btn-prev, .btn-next{
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.btn-prev:hover, .btn-next:hover{
+    background: rgba(255,255,255,1);
+}
+
+.btn-prev{
+    left: 10px;
+}
+.btn-next{
+    right: 10px;
+}
+
+/**********************************************************************************************/
+/* ***************************** BOTON DE WHATSAPP ******************************************* */
+/***********************************************************************************************/
+
+.appWhatsapp{
+    position: fixed;
+    right: 26px;
+    bottom: 100px;
+    width: 60px;
+    z-index: 1000;
+} 
+
+.appWhatsapp img{
+    width: 100%;
+    height: auto;
+}
+
+.appWhatsapp img:hover{
+    width: 115%;
+    height: auto;
+}    
+
+
+/**********************************************************************************/
+/************************** RESPONSIVE ACTIONS *************************************/
+/***********************************************************************************/
+/* Junta las categorias en una barra desplegable para el uso en celulares*/
+
+/*@media screen and (max-width: 480px){
+
+    .contenedor-menu{
+        width: 100%;
+        padding-top: 0px;
+        margin: 0;
+        position: relative;
+        top: 0;
+        z-index: 1000;
+    }
+
+    /*Aparece el boton categoria*/
+   /*.boton-menu{
+        width: 100%;
+        display: block;
+    }
+    /*Se ocultan las categorias en el boton categoria*/
+    /*.contenedor-menu .menu-des{
+        display: none;
+    }
+
+    .product-list{
+        width: 100%;
+    }
+
+    #abrir-modal +label{
+        line-height: 2;
+        text-align: center;
+        padding: 0 1em;
+        border-radius: 70px;
+        font-size: 18px;
+        margin: auto;
+    }
+
+}*/
+
+
+@media all and (max-width: 1000px){
+
+    a{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .texto-principal{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .parrafo{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1; 
+    }
+    h2{
+        font-size: 18px;
+        font-weight: 4px;
+        text-align: left;
+        line-height: 1;
+    }
+
+    #abrir-modal +label{
+        line-height: 2;
+        text-align: center;
+        border-radius: 70px;
+        font-size: 25px;
+        margin: auto;
+    }
+
+    .store-wrap{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        flex-flow: column nowrap;
+    }
+    .contenedor-menu{
+        width: 100%;
+        position: relative;
+        z-index: 1000;
+    }
+    .contenedor-menu .menu-des ul li a{
+        text-align: center;
+    }
+    .product-list{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /*se acomoda a la pantalla*/
+    }
+    /*Aparece el boton categoria*/
+    .boton-menu{
+        width: 100%;
+        display: block;
+    }
+    /*Se ocultan las categorias en el boton categoria*/
+    .contenedor-menu .menu-des{
+        display: none;
+    }
+
+
+    iframe{
+        display: flex;
+        width: 100%;
+    }
+
+    .footer{
+        height: auto; 
+    }
+
+}

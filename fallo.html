@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivero Las Candelas - Centro de Jardinería</title>
+
+    <!-- Estos son los estilos de .css -->
+    <link rel="stylesheet" href="css/vivero_estilos.css">
+
+    <!-- Estos son estilos de letras de google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Estos son los logos-->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/solid.min.css">
+    <link rel="stylesheet" href="css/brands.min.css">
+
+    <style>
+
+        .cuaderno{
+            background: url("./Imagenes/fondos/cuaderno.png");
+            background-position: center; /*Centrada en el cuadro*/
+            background-attachment: fixed;/*Adentro del cuadro*/
+            background-size: cover; /*No se, pero va*/
+            height: 90vh;
+            display: block
+        }
+
+        .boton{
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            color: white;
+            background: #015668;
+            cursor: pointer;
+        }
+
+        .boton:hover{
+            width: 210px;
+            height: 60px;
+            border-radius: 25px;
+            color: white;
+            background: steelblue;
+        }
+
+        
+       p{
+            display: block;
+            flex-flow: column;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            color: black;
+            font-size: 30px;
+            line-height: 2;
+        }
+
+        @media all and (max-width: 1000px)
+        {
+            .cuaderno{
+                height: auto;
+            }
+            p{
+                font-size: 22px;
+                line-height: 1.2; 
+            }
+            .boton{
+                align-items: center;
+            }
+        }
+
+        @media all and (max-width: 820px)
+        {
+            p{
+                font-size: 18px;
+                line-height: 1.2; 
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+        
+    <div class="cuaderno">
+        <p>
+            Ups... en estos momentos nos escontramos <br>
+            armando nuestro Instagram...  <br>
+            Pronto concluiremos para <br>
+            que puedas estar al tanto de nuestras novedades  <br> 
+            y disfrutar de la mejor experiencia <br>
+            en nuestro sitio web !! <br> <br>
+        
+            <strong> Las Candelas... </strong> <br>
+
+            <a href="index.html">
+                <button class="boton">
+                    VOLVER A INICIO
+                </button>
+            </a>
+
+        </p>
+
+    </div>
+    
+
+</body>
+</html>
