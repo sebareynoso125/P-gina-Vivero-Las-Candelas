@@ -9,7 +9,7 @@ body{
     font-family: 'Montserrat', sans-serif; /*Esto es el estilo de fuente*/
 }
 
-/*Le sacamos el subrayado a todos los links*/
+/*Le sacamos el subrayado a todos los links */
 a{
     text-decoration: none;
 }
@@ -91,6 +91,8 @@ p{
             }
             .logo img{
                 border-radius: 30px;
+                display: flex; 
+                width: 80%;
             }
 
         .nav{
@@ -386,7 +388,7 @@ p{
         .imagen img{
             display: block;
             align-self: center;
-            width: 50%;
+            width: 40%;
         }
 
     .menu-inferior{
@@ -510,46 +512,9 @@ p{
 /**********************************************************************************/
 /************************** RESPONSIVE ACTIONS *************************************/
 /***********************************************************************************/
-/* Junta las categorias en una barra desplegable para el uso en celulares*/
-
-/*@media screen and (max-width: 480px){
-
-    .contenedor-menu{
-        width: 100%;
-        padding-top: 0px;
-        margin: 0;
-        position: relative;
-        top: 0;
-        z-index: 1000;
-    }
-
-    /*Aparece el boton categoria*/
-   /*.boton-menu{
-        width: 100%;
-        display: block;
-    }
-    /*Se ocultan las categorias en el boton categoria*/
-    /*.contenedor-menu .menu-des{
-        display: none;
-    }
-
-    .product-list{
-        width: 100%;
-    }
-
-    #abrir-modal +label{
-        line-height: 2;
-        text-align: center;
-        padding: 0 1em;
-        border-radius: 70px;
-        font-size: 18px;
-        margin: auto;
-    }
-
-}*/
 
 
-@media all and (max-width: 1000px){
+@media screen and (max-width: 1000px){
 
     a{
         display: flex;
@@ -598,6 +563,11 @@ p{
         display: flex;
         flex-wrap: wrap; /*se acomoda a la pantalla*/
     }
+    .product-list .product-item{
+        width: 45%; /*22px es el valor original*/
+        
+    }
+
     /*Aparece el boton categoria*/
     .boton-menu{
         width: 100%;
@@ -618,4 +588,63 @@ p{
         height: auto; 
     }
 
+}
+
+@media screen and (max-width: 700px){
+
+    /***************  HEADER ****************************/
+    .menu{
+        flex-flow: column nowrap;
+    }
+
+    .texto-principal-us{
+        width: auto;
+        align-items: left;
+        padding-left: 1vh;
+        padding-right: 1vh;
+    } 
+
+    .parrafo{
+        display: block;
+        border-radius: 0px;
+        padding: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+
+
+
+    /***************  FOOTER ****************************/
+    .footer{
+        flex-flow: column nowrap;
+    }
+    .footer .imagen{
+        display: none;
+    }
+
+    .footer ul li{
+        text-align: center;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 510px){
+ 
+    .parrafo{
+        display: flex;
+    }
+
+    .product-list .product-item{
+        width: 90%; /*22px es el valor original*/   
+    }
+
+    #abrir-modal +label{
+        line-height: 3;
+        font-size: 20px;
+        /*padding: 0 1em;
+        border-radius: 70px;
+        margin: auto;*/
+    }
 }
