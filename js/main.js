@@ -1,11 +1,3 @@
-// Esta es la función que contiene el codigo una vez que el docuemnto ha sido cargado
-
-// *****************  IMPORTANTE ********************************************************
-//cuando clickeamos en la subcategoria o categoria correspondiente a lo mejor lo mas conveniente es
-//que no se oculte el menu
-
-//**************** iMPORTANTE ************************************************************
-
 $(document).ready(function(){
 
     //Se accede a los elemEntos li que tiene un elemento ul (es decir las subcategorias) para que al seleccionarlos no nos redirija
@@ -48,15 +40,7 @@ $(document).ready(function(){
             });
         
         });
-
-    //Con esto se logra que las subcategorías nos lleven al catalogo correspondiente al hacer click
-    /*$('.menu-des li ul li a').click(function(){
-        window.location.href = $(this).attr('href') //Asi obtenemos el atributo href del elemento clickeado
-    });*/
     
-   
-
-
     // ************** SLIDER **************************
 
     var slider=$('.slider'); //almacena salider en una variable
@@ -122,17 +106,6 @@ $(document).ready(function(){
             $('.product-item[category="'+catProduct+'"]').show();
             $('.product-item[category="'+catProduct+'"]').css('transform','scale(1)');
         }setTimeout(showProduct,400);
-
-        /* MOSTRANDO OFERTAS 
-        $('.category-item[category="oferta"]').click(function(){
-            function showOferta(){
-                $('.product-item').show();
-                $('.product-item').css('transform','scale(1)');
-            }setTimeout(showProduct,400);
-            
-        });
-        */
-
 
     });
      
