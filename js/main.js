@@ -36,13 +36,13 @@ $(document).ready(function(){
             $('.contenedor-menu .menu-des').slideToggle();
         
             $(window).resize(function(){
-                if ($(document).width()>480){
+                if ($(document).width()>1000){
                     $('.contenedor-menu .menu-des').css({'display' : 'block'});
                 }
             
-               if ($(document).width()<480){
+               if ($(document).width()<1000){
                     $('.contenedor-menu .menu-des').css({'display' : 'none'});
-                    $('.menu-des li ul').slideUp();
+                    $('.menu-des li ul .sub').slideUp();
                     $('.menu-des li').removeClass('activado');
                 }
             });

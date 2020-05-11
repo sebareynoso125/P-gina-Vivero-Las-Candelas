@@ -156,22 +156,60 @@ p{
             line-height: 1.8;
         }
 
+        .texto-principal-us{
+            min-width: 90vh;
+            min-height: 90vh;
+            display: flex;
+            align-items: left  ;
+        }    
+    
+            .parrafo{
+                display: block;
+                background: rgba(244, 238, 199, .5);
+                border-radius: 90px;
+                padding: 18px;
+                /*font-family: 'Indie Flower', cursive;*/
+                font-family: 'Montserrat', sans-serif;
+                font-size: 27px;
+               /* color: #004445;*/
+                color: black;
+                font-weight: 900;
+                text-align: center;
+                line-height: 1.5; /*interlineado*/
+            }
+    
+            .contacto{
+                display: block;
+                /*min-width: 80vh;*/
+                background: rgba(0, 0, 0, .5); 
+                font-size: 30px; 
+                font-weight: 20px;
+                font-family: 'Montserrat', sans-serif;
+                color: white;
+                text-align: left;
+                line-height: 1; /* la altura de la letra*/
+            }   
+
         /*********************************************************************************/
         /*************************** boton radio modal ***********************************/
         /*********************************************************************************/
 
         .modal{
-            position: fixed;
             display: flex;
-            width: 85%;
+            background-position: center;
+            background: rgba(0, 0, 0, .5);
+            padding: 80px;
+            position: fixed;
+            right: 10%;
+            left: 10%;
+            width: 80%;
             height: auto;
-            top: -110vh;
+            top: -150vh; /*-150vh*/
             z-index: 100;
             transition: all .5s;
         }
 
             #abrir-modal +label{
-                /*display: none;*/
                 line-height: 4;
                 padding: 0 1em;
                 border-radius: 70px;
@@ -188,12 +226,12 @@ p{
                 }
 
                 :checked ~ .modal{
-                    top: 10vh;
+                    top: -5vh;
                 }
 
            #cerrar-modal +label{
                 position: fixed;
-                right: 10vh;
+                right: 10%;
                 z-index: 150;
                 color: white;
                 font-size: 1.5em;
@@ -209,44 +247,6 @@ p{
             #cerrar-modal +label:hover{
                 background: tomato;
             }
-
-            
-
-
-    .texto-principal-us{
-        min-width: 90vh;
-        min-height: 90vh;
-        display: flex;
-        align-items: left  ;
-    }    
-
-        .parrafo{
-            display: block;
-            background: rgba(244, 238, 199, .5);
-            border-radius: 90px;
-            padding: 18px;
-            /*font-family: 'Indie Flower', cursive;*/
-            font-family: 'Montserrat', sans-serif;
-            font-size: 27px;
-           /* color: #004445;*/
-            color: black;
-            font-weight: 900;
-            text-align: center;
-            line-height: 1.5; /*interlineado*/
-        }
-
-        .contacto{
-            display: block;
-            /*min-width: 80vh;*/
-            background: rgba(0, 0, 0, .5); 
-            font-size: 30px; 
-            font-weight: 20px;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            text-align: left;
-            line-height: 1; /* la altura de la letra*/
-        }   
-    
 
 
 /**********************************************************************************/
@@ -339,8 +339,8 @@ p{
         }
         
         .product-list .product-item{
-            width: 30%; /*22px es el valor original*/
-            margin-left: 3%; 
+            width: 40%; /*30% es el valor original*/
+            margin-left: 10%; 
             margin-bottom: 3%; /*25 original*/
             box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
 
@@ -361,7 +361,7 @@ p{
 
         .product-list .product-item h3{
             display: block;
-            height: 65px;
+            height: auto; /*65px original*/
             font-family: 'Montserrat', sans-serif;
             text-align: center;
         }
@@ -541,7 +541,6 @@ p{
         text-align: center;
         border-radius: 70px;
         font-size: 25px;
-        margin: auto;
     }
 
     .store-wrap{
@@ -553,7 +552,7 @@ p{
     .contenedor-menu{
         width: 100%;
         position: relative;
-        z-index: 1000;
+        z-index: 50;
     }
     .contenedor-menu .menu-des ul li a{
         text-align: center;
@@ -565,7 +564,7 @@ p{
     }
     .product-list .product-item{
         width: 45%; /*22px es el valor original*/
-        
+        margin-left: 3%; 
     }
 
     /*Aparece el boton categoria*/
@@ -598,7 +597,7 @@ p{
     }
 
     .texto-principal-us{
-        width: auto;
+        min-width: auto;
         align-items: left;
         padding-left: 1vh;
         padding-right: 1vh;
@@ -636,6 +635,15 @@ p{
         display: flex;
     }
 
+    h2{
+        display: flex;
+        font-size: 18px;
+        text-align: center;
+        line-height: 1;
+        min-width: auto;
+        flex-flow: column;
+    }
+
     .product-list .product-item{
         width: 90%; /*22px es el valor original*/   
     }
@@ -643,8 +651,35 @@ p{
     #abrir-modal +label{
         line-height: 3;
         font-size: 20px;
-        /*padding: 0 1em;
-        border-radius: 70px;
-        margin: auto;*/
     }
+}
+
+@media screen and (max-width: 440px){
+
+    .modal{
+        display: block;
+        width: auto;
+        margin-left: 0;
+    }
+
+    #abrir-modal +label{
+        line-height: 1,1;
+        font-size: 15;
+        padding: 0 0em;
+        margin: none;
+    }
+}
+
+@media screen and (max-width: 400px){
+    
+    .tienda-modal{
+        display: none;
+    }
+   /* #abrir-modal +label{
+        display: none;
+    }
+    .texto-principal{
+        height: auto;
+    }*/
+
 }
