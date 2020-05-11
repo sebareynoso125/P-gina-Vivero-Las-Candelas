@@ -1,6 +1,6 @@
 # P-gina-Vivero-Las-Candelas
 
-Esta es la Primera version de la pagina web del centro de jardinería "Las Candelas".
+Esta es la Primera version de la pagina web del centro de jardinería "Las Candelas" la cual permite a los usuarios de la misma conocer el comercio, los productos que vende, los servicios que ofrece, los medios de contacto y realizar compras eventuales mediante botones de pago de MERCADOPAGO. EN ESTA PRIMERA VERSIÓN LA PÁGINA NO CUENTA CON CARRITO DE COMPRA.
 
 En una primera instancia, la página cuenta con las siguientes pestañas:
 
