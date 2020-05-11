@@ -677,9 +677,19 @@ p{
     }
    /* #abrir-modal +label{
         display: none;
-    }
-    .texto-principal{
-        height: auto;
     }*/
+    .texto-principal{
+        padding-left: 20%;
+        height: auto; 
+    }
 
+    .texto-principal h2{
+        display: flex;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 330px){
+    .texto-principal{
+        padding-left: 15%;
+    }
 }
