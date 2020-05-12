@@ -161,7 +161,7 @@ p{
     
             .parrafo{
                 display: block;
-                background: rgba(244, 238, 199, .5);
+                background: rgba(244, 238, 199, .55);
                 border-radius: 90px;
                 padding: 18px;
                 font-family: 'Montserrat', sans-serif;
