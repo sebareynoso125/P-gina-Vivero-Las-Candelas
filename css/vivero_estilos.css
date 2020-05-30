@@ -143,13 +143,26 @@ p{
 
         h2{
             display: block;
-            background: rgba(0, 0, 0, .5);
+            background: rgba(0, 0, 0, .85);
             border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             font-size: 22px;
             color: white;
             text-align: left;
             line-height: 1.8;
+        }
+
+        .envio{
+            background: rgba(189, 224, 148, 0.85);
+            border-radius: 20px;
+            padding: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: black;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.2;
+            
         }
 
         .texto-principal-us{
@@ -603,6 +616,11 @@ p{
         text-align: center;
     }
 
+    .envio{
+        font-size: 20px;
+        line-height: 1;
+    }
+
 
 
 
@@ -634,6 +652,10 @@ p{
         line-height: 1;
         min-width: auto;
         flex-flow: column;
+    }
+
+    .envio{
+        font-size: 18px;
     }
 
     .product-list .product-item{
