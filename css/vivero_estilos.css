@@ -443,7 +443,7 @@ p{
     display: -ms-flex;
     display: o-flex;
     display: flex;
-    width: 400%; /* (cantidad de avisos * 100)=width */
+    width: 300%; /* (cantidad de avisos * 100)=width */
 }
 
 .servicios{
