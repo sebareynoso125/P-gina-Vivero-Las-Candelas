@@ -24,12 +24,12 @@
             background-position: center; /*Centrada en el cuadro*/
             background-attachment: fixed;/*Adentro del cuadro*/
             background-size: cover; /*No se, pero va*/
-            height: 90vh;
+            height: 100vh;
             display: block
         }
 
         .boton{
-            width: 200px;
+            width: 20%;
             height: 50px;
             border-radius: 20px;
             color: white;
@@ -38,7 +38,7 @@
         }
 
         .boton:hover{
-            width: 210px;
+            width: 21%;
             height: 60px;
             border-radius: 25px;
             color: white;
@@ -60,24 +60,34 @@
         {
             .cuaderno{
                 height: auto;
+                width: auto;
             }
             p{
+                display: flex;
                 font-size: 22px;
                 line-height: 1.2; 
             }
             .boton{
-                align-items: center;
+                right: 40%;
+                left: 40%;
             }
         }
 
-        @media all and (max-width: 820px)
-        {
+        @media all and (max-width: 749px){
             p{
-                font-size: 18px;
-                line-height: 1.2; 
+                font-size: 14px;
+                line-height: 1; 
             }
         }
 
+        @media all and (max-width: 640px){
+            .cuaderno{
+                height: 150%;
+            }
+            p{
+                top: 10vh;
+            }
+        }
     </style>
 
 </head>
